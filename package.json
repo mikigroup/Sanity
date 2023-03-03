@@ -1,0 +1,26 @@
+{
+  "name": "stastnesrdce",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Jiří Mika <mikigroup@gmail.com>",
+  "license": "LICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build",
+    "dev": "sanity dev"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/vision": "^3.0.6",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.0.6",
+    "styled-components": "^5.3.6",
+    "react-icons": "^4.4.0"
+  }
+}
