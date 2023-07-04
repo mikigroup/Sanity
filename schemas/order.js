@@ -1,7 +1,6 @@
 import { MdFoodBank, MdOutlineFastfood } from 'react-icons/md'
 import { idOrder } from '../components/idOrder'
 
-
 export default {
   title: 'Objednávky',
   name: 'order',
@@ -17,9 +16,34 @@ export default {
         input: idOrder
       }     
     },
+{
+  name: 'timestamp',
+  title: 'Vytvořena:',
+  type: 'datetime',
+  readOnly: true,
+  options: {
+    dateFormat: 'DD.MM.YYYY',
+    timeFormat: 'HH:mm',
+  }
+}
+    ,
+    {
+      name: 'customer',
+      title: 'Zákazník:',
+      readOnly: true,
+      type: 'string',
+    },
+    {
+      name: 'itemsOrder',
+      title: 'Co si objednal:',
+      type: 'array',
+      readOnly: true,
+       of: [{type: 'string'}, {type: 'number'}]
+    },
     {
       name: 'note',
       title: 'Poznámka:',
+      readOnly: true,
       type: 'string',
     },    
   ],

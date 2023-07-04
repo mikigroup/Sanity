@@ -16,7 +16,7 @@ import { useDocumentStore } from 'sanity'
   }, [documentStore, docId])
   
 	return (
-	  <div>Value: {docId}</div>
+	  <div>{docId}</div>
 	)
 }
 
