@@ -320,7 +320,7 @@ export default (S) =>
                 ),
             ]),
         ),
-      S.listItem()
+     /*  S.listItem()
         .title('Texty')
         .child(
           S.list()
@@ -344,7 +344,7 @@ export default (S) =>
                     ]),
                 ),
             ]),
-        ),
+        ), */
     S.listItem()
         .title('Objednávky')
         .child(
