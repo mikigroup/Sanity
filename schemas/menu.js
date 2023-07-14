@@ -8,7 +8,7 @@ export default {
     title: 'Zadávání meníček',
     name: 'menu',
     type: 'document',
-    icon: MdFoodBank,
+    icon: MdFoodBank,    
     fields: [
       
      /*  {
@@ -43,12 +43,12 @@ export default {
         name: 'description',
         type: 'text',
       },
-      {  
+      /* {  
   title: 'Content', 
   name: 'content',
   type: 'array', 
   of: [{type: 'block'}]
-},
+}, */
       {
         title: 'Cena',
         name: 'price',

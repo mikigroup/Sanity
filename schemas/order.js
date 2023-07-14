@@ -13,7 +13,7 @@ export default {
       type: 'string',
       readOnly: true,
       components: {
-        input: idOrder
+        input: idOrder,        
       }     
     },
 {
@@ -47,7 +47,26 @@ export default {
       type: 'string',
     },    
   ],
+  preview: {
+    select: {
+      title: '_id',
+      date: 'timestamp',
+      createdAt: '_createdAt'
+    },
+    prepare(selection) {
+      const {title, timestamp, createdAt} = selection          
+          return {           
+            title: title,
+            subtitle: createdAt
+          }
+        },
+  },
+  
+/* timestamp */
+
+
+
     /* initialValue: () => ({    
     releaseDate: (new Date()).toISOString()
   }) */
-}
+};
