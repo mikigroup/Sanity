@@ -52,16 +52,23 @@ export default {
   ],
   preview: {
     select: {
-      title: '_id',
+      title: 'customer',
       date: 'timestamp',
       createdAt: '_createdAt',
       
     },
     prepare(selection) {
-      const {title, date, createdAt} = selection          
+      const {title, createdAt} = selection
+      const createdAtDate = new Date(createdAt);
+
+      const day = createdAtDate.getDate();
+      const month = createdAtDate.getMonth() + 1; // Month is zero-based, so add 1
+      const year = createdAtDate.getFullYear();
+
+      const formattedDate = `${day < 10 ? '0' + day : day}.${month < 10 ? '0' + month : month}.${year}`;         
           return {           
             title: title,
-            subtitle: createdAt.split('-').reverse().join('-') // YYYY-MM-DD --> DD-MM-YYY            
+            subtitle: formattedDate
           }
         },
   },
