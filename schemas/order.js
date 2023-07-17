@@ -1,6 +1,9 @@
 import { MdFoodBank, MdOutlineFastfood } from 'react-icons/md'
 import { idOrder } from '../components/idOrder'
 
+const event = new Date('05 October 2011 14:48 UTC');
+console.log(event.toString())
+
 export default {
   title: 'Objednávky',
   name: 'order',
@@ -51,13 +54,14 @@ export default {
     select: {
       title: '_id',
       date: 'timestamp',
-      createdAt: '_createdAt'
+      createdAt: '_createdAt',
+      
     },
     prepare(selection) {
-      const {title, timestamp, createdAt} = selection          
+      const {title, date, createdAt} = selection          
           return {           
             title: title,
-            subtitle: createdAt
+            subtitle: createdAt.split('-').reverse().join('-') // YYYY-MM-DD --> DD-MM-YYY            
           }
         },
   },

@@ -1,9 +1,6 @@
 import vyberMenu from './vyberMenu'
 import { MdFoodBank, MdOutlineFastfood } from 'react-icons/md'
 
-const releaseDate = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
 export default {
     title: 'Zadávání meníček',
     name: 'menu',
@@ -86,7 +83,7 @@ export default {
           const { date, title } = selection
           return {
             subtitle: date, // YYYY-MM-DD --> YYYY
-            title: title
+            title: title.split('-').reverse().join('-')
           }
         },
          /*  prepare(menu, viewOptions = {}) {

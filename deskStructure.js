@@ -367,62 +367,7 @@ export default (S) =>
                               '_type == "order" ', //zde změnit
                             )
                             .params({ datefilter }) ,
-                        ),
-                      S.listItem()
-                        .title('Únor')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky - Únor')
-                            .filter(
-                              '_type == "order" && releaseDate > "2023-01-31" && releaseDate < "2023-03-01"',
-                            )
-                            .params({ datefilter }),
-                        ),
-                      S.listItem()
-                        .title('Březen')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky Březen')
-                            .filter(
-                              '_type == "order" && _createdAt > "2023-02-28" && _createdAt < "2023-04-01"',
-                            )
-                            .params({ datefilter }),
-                        ),
-                      S.listItem()
-                        .title('Duben')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky Duben')
-                            .filter(
-                              '_type == "order" && releaseDate > "2023-03-31" && releaseDate < "2023-05-01"',
-                            )
-                            .params({ datefilter }),
-                        ),
-                      S.listItem()
-                        .title('Květen')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky Květen')
-                            .filter(
-                              '_type == "order" && releaseDate > "2023-04-30" && releaseDate < "2023-06-01"',
-                            )
-                            .params({ datefilter }),
-                        ),
-                      S.listItem()
-                        .title('Červen')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky Červen')
-                            .filter(
-                              '_type == "order" && releaseDate > "2023-05-31" && releaseDate < "2023-07-01"',
-                            )
-                            .params({ datefilter }),
-                        ),
+                        ),                      
                       S.listItem()
                         .title('Červenec')
                         .schemaType('order')
@@ -430,7 +375,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Červenec')
                             .filter(
-                              '_type == "order" && releaseDate > "2023-06-30" && releaseDate < "2023-08-01"',
+                              '_type == "order" && _createdAt > "2023-06-30" && _createdAt < "2023-08-01"',
                             )
                             .params({ datefilter }),
                         ),
@@ -441,7 +386,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Srpen')
                             .filter(
-                              '_type == "order" && releaseDate > "2023-07-31" && releaseDate < "2023-09-01"',
+                              '_type == "order" && _createdAt > "2023-07-31" && _createdAt < "2023-09-01"',
                             )
                             .params({ datefilter }),
                         ),
@@ -452,7 +397,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Září')
                             .filter(
-                              '_type == "order" && releaseDate > "2023-08-31" && releaseDate < "2023-10-01"',
+                              '_type == "order" && _createdAt > "2023-08-31" && _createdAt < "2023-10-01"',
                             )
                             .params({ datefilter }),
                         ),
@@ -463,7 +408,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Říjen')
                             .filter(
-                              '_type == "menu" && releaseDate > "2023-09-30" && releaseDate < "2023-11-01"',
+                              '_type == "menu" && _createdAt > "2023-09-30" && _createdAt < "2023-11-01"',
                             )
                             .params({ datefilter }),
                         ),
@@ -474,7 +419,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Listopad')
                             .filter(
-                              '_type == "order" && releaseDate > "2023-10-31" && releaseDate < "2023-12-01"',
+                              '_type == "order" && _createdAt > "2023-10-31" && _createdAt < "2023-12-01"',
                             )
                             .params({ datefilter }),
                         ),
@@ -485,7 +430,7 @@ export default (S) =>
                           S.documentTypeList('order')
                             .title('Objednávky Prosinec')
                             .filter(
-                              '_type == "order" && releaseDate > "2023-11-30" && releaseDate < "2024-01-01"',
+                              '_type == "order" && _createdAt > "2023-11-30" && _createdAt < "2024-01-01"',
                             )
                             .params({ datefilter }),
                         ),
