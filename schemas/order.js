@@ -1,7 +1,7 @@
 import { MdFoodBank, MdOutlineFastfood } from "react-icons/md";
 import { idOrder } from "../components/idOrder";
 // import { incrementOrderNumber } from '../components/incrementOrderNumber'
-import OrderNumberIncrementer from "../components/OrderNumberIncrementer";
+// import OrderNumberIncrementer from "../components/OrderNumberIncrementer";
 
 export default {
   title: "Objednávky",
@@ -10,6 +10,11 @@ export default {
   icon: MdFoodBank,
   fields: [
     {
+  title: 'Vyřízena?',
+  name: 'released',
+  type: 'boolean'
+    },
+    {
       name: "id",
       title: "Objednávka:",
       type: "string",
@@ -17,16 +22,7 @@ export default {
       components: {
         input: idOrder,
       },
-    },
-    {
-      name: "orderNumber",
-      title: "Order Number",
-      type: "string",
-      readOnly: true,      
-      components: {
-        input: OrderNumberIncrementer,
-      },
-    },
+    },   
     {
       name: "timestamp",
       title: "Vytvořena:",
@@ -44,6 +40,18 @@ export default {
       type: "string",
     },
     {
+      name: "totalPieces",
+      title: "Celkový počet kusů:",
+      readOnly: true,
+      type: "number",
+    },
+    {
+      name: "totalPrice",
+      title: "Celková cena:",
+      readOnly: true,
+      type: "number",
+    },
+    {
       name: "itemsOrder",
       title: "Co si objednal:",
       type: "array",
@@ -59,12 +67,12 @@ export default {
   ],
   preview: {
     select: {
-      title: "customer",
-      date: "timestamp",
+      title: "customer",      
       createdAt: "_createdAt",
+      vyrizena: "released"
     },
     prepare(selection) {
-      const { title, createdAt } = selection;
+      const { title, createdAt, vyrizena } = selection;
       const createdAtDate = new Date(createdAt);
 
       const day = createdAtDate.getDate();
@@ -77,6 +85,7 @@ export default {
       return {
         title: title,
         subtitle: formattedDate,
+        vyrizena: released
       };
     },
   },
