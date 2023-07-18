@@ -356,18 +356,7 @@ export default (S) =>
                 .child(
                   S.list()
                     .title('Měsíce')
-                    .items([
-                      S.listItem()
-                        .title('Všechny pro mazání')
-                        .schemaType('order')
-                        .child((datefilter) =>
-                          S.documentTypeList('order')
-                            .title('Objednávky - Leden')
-                             .filter(
-                              '_type == "order" ', //zde změnit
-                            )
-                            .params({ datefilter }) ,
-                        ),                      
+                    .items([                                         
                       S.listItem()
                         .title('Červenec')
                         .schemaType('order')
@@ -436,6 +425,146 @@ export default (S) =>
                         ),
                     ]),
                 ),
+               S.listItem()
+                .title('2024')
+                .child(
+                  S.list()
+                    .title('Měsíce')
+                    .items([
+                       S.listItem()
+                        .title('Leden')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Leden')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2023-12-31" && _createdAt < "2024-02-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                         S.listItem()
+                        .title('Únor')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Únor')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-01-31" && _createdAt < "2024-03-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                         S.listItem()
+                        .title('Březen')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Březen')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-02-28" && _createdAt < "2024-04-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                         S.listItem()
+                        .title('Duben')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Duben')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-03-31" && _createdAt < "2024-05-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                         S.listItem()
+                        .title('Květen')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Květen')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-04-30" && _createdAt < "2024-06-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                         S.listItem()
+                        .title('Červen')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Červen')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-05-31" && _createdAt < "2024-07-01"',
+                            )
+                            .params({ datefilter }),
+                        ),                                         
+                      S.listItem()
+                        .title('Červenec')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Červenec')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-06-30" && _createdAt < "2024-08-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                      S.listItem()
+                        .title('Srpen')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Srpen')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-07-31" && _createdAt < "2024-09-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                      S.listItem()
+                        .title('Září')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Září')
+                            .filter(                              
+                              '_type == "order" && _createdAt > "2024-08-31" && _createdAt < "2024-10-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                      S.listItem()
+                        .title('Říjen')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Říjen')
+                            .filter(
+                              '_type == "order" && _createdAt > "2024-09-30" && _createdAt < "2024-11-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                      S.listItem()
+                        .title('Listopad')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Listopad')
+                            .filter(
+                              '_type == "order" && _createdAt > "2024-10-31" && _createdAt < "2024-12-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                      S.listItem()
+                        .title('Prosinec')
+                        .schemaType('order')
+                        .child((datefilter) =>
+                          S.documentTypeList('order')
+                            .title('Objednávky Prosinec')
+                            .filter(
+                              '_type == "order" && _createdAt > "2024-11-30" && _createdAt < "2025-01-01"',
+                            )
+                            .params({ datefilter }),
+                        ),
+                    ]),
+                ),  
             ]),
         ) ,
     ])
