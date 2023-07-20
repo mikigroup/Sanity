@@ -1,7 +1,6 @@
 import { MdFoodBank, MdOutlineFastfood } from "react-icons/md";
 import { idOrder } from "../components/idOrder";
-// import { incrementOrderNumber } from '../components/incrementOrderNumber'
-// import OrderNumberIncrementer from "../components/OrderNumberIncrementer";
+import { orderNumberIncrementer } from "../components/orderNumberIncrementer";
 
 export default {
   title: "Objednávky",
@@ -10,9 +9,9 @@ export default {
   icon: MdFoodBank,
   fields: [
     {
-  title: 'Vyřízena?',
-  name: 'released',
-  type: 'boolean'
+      name: "released",
+      title: "Vyřízena?",
+      type: "boolean",
     },
     {
       name: "id",
@@ -22,7 +21,15 @@ export default {
       components: {
         input: idOrder,
       },
-    },   
+    },
+    {
+      name: "orderNumber",
+      title: "Objednávka:",
+      type: "number",
+     /*  components: {
+        input: orderNumberIncrementer,
+      }, */
+    },
     {
       name: "timestamp",
       title: "Vytvořena:",
@@ -36,6 +43,12 @@ export default {
     {
       name: "customer",
       title: "Zákazník:",
+      readOnly: true,
+      type: "string",
+    },
+    {
+      name: "email",
+      title: "Email:",
       readOnly: true,
       type: "string",
     },
@@ -62,14 +75,14 @@ export default {
       name: "note",
       title: "Poznámka:",
       readOnly: true,
-      type: "string",
+      type: "text",
     },
   ],
   preview: {
     select: {
-      title: "customer",      
+      title: "customer",
       createdAt: "_createdAt",
-//      vyrizena: "released"
+      vyrizena: "released",
     },
     prepare(selection) {
       const { title, createdAt, vyrizena } = selection;
@@ -78,6 +91,7 @@ export default {
       const day = createdAtDate.getDate();
       const month = createdAtDate.getMonth() + 1; // Month is zero-based, so add 1
       const year = createdAtDate.getFullYear();
+      const test = Boolean();
 
       const formattedDate = `${day < 10 ? "0" + day : day}.${
         month < 10 ? "0" + month : month
@@ -85,6 +99,8 @@ export default {
       return {
         title: title,
         subtitle: formattedDate,
+        vyrizena: test,
+
         //vyrizena: released
       };
     },
