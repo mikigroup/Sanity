@@ -69,7 +69,7 @@ export default {
     select: {
       title: "customer",      
       createdAt: "_createdAt",
-      vyrizena: "released"
+//      vyrizena: "released"
     },
     prepare(selection) {
       const { title, createdAt, vyrizena } = selection;
@@ -85,7 +85,7 @@ export default {
       return {
         title: title,
         subtitle: formattedDate,
-        vyrizena: released
+        //vyrizena: released
       };
     },
   },
