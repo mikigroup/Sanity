@@ -1,6 +1,6 @@
 import { MdFoodBank, MdOutlineFastfood } from "react-icons/md";
 import { idOrder } from "../components/idOrder";
-import { orderNumberIncrementer } from "../components/orderNumberIncrementer";
+import { orderNumber} from "../components/orderNumber";
 
 export default {
   title: "Objednávky",
@@ -16,8 +16,7 @@ export default {
     {
       name: "id",
       title: "Objednávka:",
-      type: "string",
-      readOnly: true,
+      type: "string",      
       components: {
         input: idOrder,
       },
@@ -26,9 +25,9 @@ export default {
       name: "orderNumber",
       title: "Objednávka:",
       type: "number",
-     /*  components: {
-        input: orderNumberIncrementer,
-      }, */
+         components: {
+        input: orderNumber,
+      },
     },
     {
       name: "timestamp",
