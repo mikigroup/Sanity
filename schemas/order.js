@@ -13,17 +13,23 @@ export default {
       title: "Vyřízena?",
       type: "boolean",
     },
-    {
+      {
+      name: "noteInternal",
+      title: "Interní poznámka:",      
+      type: "text",
+      rows: 2
+    },
+    /* {
       name: "id",
       title: "Objednávka:",
       type: "string",      
       components: {
         input: idOrder,
       },
-    },
+    }, */
     {
       name: "orderNumber",
-      title: "Objednávka:",
+      title: "Objednávka:",      
       type: "number",
          components: {
         input: orderNumber,

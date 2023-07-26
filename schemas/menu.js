@@ -50,6 +50,7 @@ export default {
         title: 'Cena',
         name: 'price',
         type: 'number',
+        validation: Rule => Rule.required()
       },
    /*    {
       title: 'Test',
