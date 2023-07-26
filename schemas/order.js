@@ -84,32 +84,33 @@ export default {
     },
   ],
   preview: {
-    select: {
-      title: "customer",
-      createdAt: "_createdAt",
-      vyrizena: "released",
-    },
-    prepare(selection) {
-      const { title, createdAt, vyrizena } = selection;
-      const createdAtDate = new Date(createdAt);
-
-      const day = createdAtDate.getDate();
-      const month = createdAtDate.getMonth() + 1; // Month is zero-based, so add 1
-      const year = createdAtDate.getFullYear();
-      const test = Boolean();
-
-      const formattedDate = `${day < 10 ? "0" + day : day}.${
-        month < 10 ? "0" + month : month
-      }.${year}`;
-      return {
-        title: title,
-        subtitle: formattedDate,
-        vyrizena: test,
-
-        //vyrizena: released
-      };
-    },
+  select: {
+    customer: "customer",
+    createdAt: "_createdAt",
+    orderNumber: "orderNumber",
+    released: "released"      
   },
+  prepare(selection) {
+    const { customer, createdAt, orderNumber, released } = selection;
+    const createdAtDate = new Date(createdAt);
+
+    const day = createdAtDate.getDate();
+    const month = createdAtDate.getMonth() + 1; // měsíc má základ 0, proto přodat 1
+    const year = createdAtDate.getFullYear();
+
+    const formattedDate = `${day < 10 ? "0" + day : day}.${
+      month < 10 ? "0" + month : month
+    }.${year}`;
+
+    const title = `${customer} - ${released ? 'Vyřízená' : 'Nevyřízená'}`;
+    const subtitle = `${formattedDate} - ${orderNumber}`;
+
+    return {
+      title: title,
+      subtitle: subtitle        
+    };
+  },
+},
 
   /* timestamp */
 
