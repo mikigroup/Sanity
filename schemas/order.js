@@ -1,23 +1,24 @@
 import { MdFoodBank, MdOutlineFastfood } from "react-icons/md";
 import { idOrder } from "../components/idOrder";
 import { orderNumber} from "../components/orderNumber";
+import { PackageIcon } from "@sanity/icons";
 
 export default {
   title: "Objednávky",
   name: "order",
   type: "document",
-  icon: MdFoodBank,
+  icon: PackageIcon,
   fields: [
     {
       name: "released",
       title: "Vyřízena?",
       type: "boolean",
     },
-      {
+    {
       name: "noteInternal",
-      title: "Interní poznámka:",      
+      title: "Interní poznámka:",
       type: "text",
-      rows: 2
+      rows: 2,
     },
     /* {
       name: "id",
@@ -29,9 +30,9 @@ export default {
     }, */
     {
       name: "orderNumber",
-      title: "Objednávka:",      
+      title: "Objednávka:",
       type: "number",
-         components: {
+      components: {
         input: orderNumber,
       },
     },
@@ -84,33 +85,33 @@ export default {
     },
   ],
   preview: {
-  select: {
-    customer: "customer",
-    createdAt: "_createdAt",
-    orderNumber: "orderNumber",
-    released: "released"      
+    select: {
+      customer: "customer",
+      createdAt: "_createdAt",
+      orderNumber: "orderNumber",
+      released: "released",
+    },
+    prepare(selection) {
+      const { customer, createdAt, orderNumber, released } = selection;
+      const createdAtDate = new Date(createdAt);
+
+      const day = createdAtDate.getDate();
+      const month = createdAtDate.getMonth() + 1; // měsíc má základ 0, proto přodat 1
+      const year = createdAtDate.getFullYear();
+
+      const formattedDate = `${day < 10 ? "0" + day : day}.${
+        month < 10 ? "0" + month : month
+      }.${year}`;
+
+      const title = `${customer} - ${released ? "Vyřízená" : "Nevyřízená"}`;
+      const subtitle = `${formattedDate} - ${orderNumber}`;
+
+      return {
+        title: title,
+        subtitle: subtitle,
+      };
+    },
   },
-  prepare(selection) {
-    const { customer, createdAt, orderNumber, released } = selection;
-    const createdAtDate = new Date(createdAt);
-
-    const day = createdAtDate.getDate();
-    const month = createdAtDate.getMonth() + 1; // měsíc má základ 0, proto přodat 1
-    const year = createdAtDate.getFullYear();
-
-    const formattedDate = `${day < 10 ? "0" + day : day}.${
-      month < 10 ? "0" + month : month
-    }.${year}`;
-
-    const title = `${customer} - ${released ? 'Vyřízená' : 'Nevyřízená'}`;
-    const subtitle = `${formattedDate} - ${orderNumber}`;
-
-    return {
-      title: title,
-      subtitle: subtitle        
-    };
-  },
-},
 
   /* timestamp */
 
