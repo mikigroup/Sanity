@@ -261,7 +261,7 @@ export default (S) =>
                             )
                             .params({ datefilter })
                         ),
-                      S.listItem()
+                      /*S.listItem()
                         .title("Srpen")
                         .schemaType("menu")
                         .child((datefilter) =>
@@ -315,7 +315,7 @@ export default (S) =>
                               '_type == "menu" && releaseDate > "2024-11-30" && releaseDate < "2025-01-01"'
                             )
                             .params({ datefilter })
-                        ),
+                        ),*/
                     ])
                 ),
             ])

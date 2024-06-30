@@ -60,12 +60,12 @@ export default {
   ],
   orderings: [
     {
-      title: "datumu sestupně",
+      title: "datum sestupně",
       name: "releaseDate",
       by: [{ field: "releaseDate", direction: "desc" }],
     },
     {
-      title: " datumu vzestupně",
+      title: " datum vzestupně",
       name: "releaseDate",
       by: [{ field: "releaseDate", direction: "asc" }],
     },
