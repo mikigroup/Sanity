@@ -261,7 +261,7 @@ export default (S) =>
                             )
                             .params({ datefilter })
                         ),
-                      /*S.listItem()
+                      S.listItem()
                         .title("Srpen")
                         .schemaType("menu")
                         .child((datefilter) =>
@@ -272,6 +272,7 @@ export default (S) =>
                             )
                             .params({ datefilter })
                         ),
+                        /*
                       S.listItem()
                         .title("Září")
                         .schemaType("menu")
