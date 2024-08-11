@@ -272,7 +272,7 @@ export default (S) =>
                             )
                             .params({ datefilter })
                         ),
-                        /*
+
                       S.listItem()
                         .title("Září")
                         .schemaType("menu")
@@ -283,7 +283,7 @@ export default (S) =>
                               '_type == "menu" && releaseDate > "2024-08-31" && releaseDate < "2024-10-01"'
                             )
                             .params({ datefilter })
-                        ),
+                        ),/*
                       S.listItem()
                         .title("Říjen")
                         .schemaType("menu")
