@@ -1,6 +1,6 @@
 // dokumentace https://www.sanity.io/docs/studio-react-hooks
 
-import {useMemoObservable} from 'react-rx'
+import {useMemoObservable} from 'react-rx-old'
 import { useFormValue } from 'sanity'
 import { useDocumentStore } from 'sanity'
 
