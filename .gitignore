@@ -1,9 +1,28 @@
-node_modules\*
-.node_modules\*
-.sanity\
+# Dependencies
 node_modules/
-node_modules\ 
-jspm_packages/
+.sanity/
+
+# Build outputs
 dist/
-dist\
-.idea/workspace.xml
+
+# IDE
+.idea/
+.vscode/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+*.pem
+
+# Cache
+.cache
+.temp
