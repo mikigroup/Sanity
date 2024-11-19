@@ -305,7 +305,7 @@ export default (S) =>
                               '_type == "menu" && releaseDate > "2024-10-31" && releaseDate < "2024-12-01"'
                             )
                             .params({ datefilter })
-                        ),/*
+                        ),
                       S.listItem()
                         .title("Prosinec")
                         .schemaType("menu")
@@ -316,7 +316,7 @@ export default (S) =>
                               '_type == "menu" && releaseDate > "2024-11-30" && releaseDate < "2025-01-01"'
                             )
                             .params({ datefilter })
-                        ),*/
+                        ),
                     ])
                 ),
             ])
